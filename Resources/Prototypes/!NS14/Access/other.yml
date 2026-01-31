@@ -1,0 +1,4 @@
+- type: accessLevel
+  id: DeathSquad
+  name: id-card-access-level-death-squad
+  canAddToIdCard: false

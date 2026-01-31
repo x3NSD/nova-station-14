@@ -1,0 +1,1 @@
+id-card-access-level-death-squad = Death Squad
