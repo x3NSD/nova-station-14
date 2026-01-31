@@ -1,0 +1,53 @@
+[game]
+hostname         = "🛰️ Nova Station — Main [RU]"
+desc = "Тестовый сервер"
+maxplayers = 100
+soft_max_players = 100
+map_rotation = true
+lobbyenabled     = true
+lobbyduration    = 360
+panic_bunker.enabled = false
+panic_bunker.min_overall_minutes = 120
+panic_bunker.disable_with_admins = true
+panic_bunker.enable_without_admins = true
+panic_bunker.show_reason = true
+panic_bunker.custom_reason = "You have not played on a Wizard's Den server long enough to connect to this server. Please play on Wizard's Den Lizard or Wizard's Den Leviathan until you have more playtime."
+
+[infolinks]
+bug_report = "https://discord.gg/xt8BwfYWAG"
+discord    = "https://discord.gg/xt8BwfYWAG"
+forum      = "https://discord.gg/xt8BwfYWAG"
+github     = "https://github.com/x3NSD/nova-station-14"
+patreon    = "Отсутствует"
+website    = "Отсутствует"
+wiki       = "Отсутствует"
+
+[server]
+rules_file = "CorvaxLRPRuleset"
+lobby_name = "️🛰️ Nova Station 14 - Main"
+
+[movement]
+mob_pushing = false
+
+[net]
+max_connections = 1024
+
+[vote]
+restart_required_ratio = 0.7
+
+[netres]
+limit = 10.0
+
+[admin]
+see_own_notes = true
+deadmin_on_join = true
+new_player_threshold = 600
+alert.min_players_sharing_connection = 2
+allow_multi_server_play = false
+
+[atmos]
+max_explosion_range = 10
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
