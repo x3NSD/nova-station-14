@@ -181,9 +181,42 @@ namespace Content.Client.Viewport
 
         // Draw box in pixel coords to draw the viewport at.
         private UIBox2i GetDrawBox()
+        {
+            DebugTools.AssertNotNull(_viewport);
+
+            var vpSize = _viewport!.Size;
+            var ourSize = (Vector2) PixelSize;
+
+            if (FixedStretchSize == null)
             {
-                return new UIBox2i(Vector2i.Zero, PixelSize);
+                var (ratioX, ratioY) = ourSize / vpSize;
+                var ratio = 1f;
+                switch (_ignoreDimension)
+                {
+                    case ScalingViewportIgnoreDimension.None:
+                        ratio = Math.Min(ratioX, ratioY);
+                        break;
+                    case ScalingViewportIgnoreDimension.Vertical:
+                        ratio = ratioX;
+                        break;
+                    case ScalingViewportIgnoreDimension.Horizontal:
+                        ratio = ratioY;
+                        break;
+                }
+
+                var size = vpSize * ratio;
+                // Size
+                var pos = (ourSize - size) / 2;
+
+                return (UIBox2i) UIBox2.FromDimensions(pos, size);
             }
+            else
+            {
+                // Center only, no scaling.
+                var pos = (ourSize - FixedStretchSize.Value) / 2;
+                return (UIBox2i) UIBox2.FromDimensions(pos, FixedStretchSize.Value);
+            }
+        }
 
         private void RegenerateViewport()
         {
@@ -291,16 +324,14 @@ namespace Content.Client.Viewport
         {
             EnsureViewportCreated();
 
-            var scaleFactor = (Vector2) PixelSize / _viewport!.Size;
+            var drawBox = GetDrawBox();
+            var scaleFactor = drawBox.Size / (Vector2) _viewport!.Size;
 
             if (scaleFactor.X == 0 || scaleFactor.Y == 0)
+                // Basically a nonsense scenario, at least make sure to return something that can be inverted.
                 return Matrix3x2.Identity;
 
-            return Matrix3Helpers.CreateTransform(
-                GlobalPixelPosition,
-                0,
-                scaleFactor
-            );
+            return Matrix3Helpers.CreateTransform(GlobalPixelPosition + drawBox.TopLeft, 0, scaleFactor);
         }
 
         private void EnsureViewportCreated()
