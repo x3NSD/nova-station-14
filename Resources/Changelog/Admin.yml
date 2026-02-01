@@ -2,66 +2,63 @@
 Entries:
 - author: DrSmugleaf
   changes:
-  - message: Created the admin changelog.
+  - message: Создан список изменений в административной панели.
     type: Add
   id: 1
   time: '2023-10-08T04:26:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Added a new panic bunker UI in the F7 admin panel.
+  - message: В панель администратора F7 добавлен новый интерфейс для создания тревожного бункера.
     type: Add
-  - message: Added being able to toggle the panic bunker automatically depending on
-      if admins are online or not.
+  - message: Добавлена ​​возможность автоматического включения/выключения аварийного бункера в зависимости от того, находятся ли администраторы в сети или нет.
     type: Add
   id: 2
   time: '2023-10-12T22:46:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Added total playtime to the F7 player list and the AHelp window title.
+  - message: Добавлено общее время игры в список игроков, нажимаемых клавишей F7, и в заголовок окна AHelp.
     type: Add
   id: 3
   time: '2023-10-14T08:55:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Added admin Erase verb, add checkbox to erase from the ban panel.
+  - message: Добавлена ​​возможность удаления глагола администратором, добавлен флажок для удаления из панели блокировки.
     type: Add
   id: 4
   time: '2023-10-14T09:00:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Made the panic bunker UI also set the minimum account age/playtime requirements
-      when the two inputs lose focus, not just when pressing enter.
+  - message: В пользовательском интерфейсе бункера паники также установлено ограничение по минимальному возрасту/времени игры для учетной записи, когда теряют фокус два поля ввода, а не только при нажатии клавиши Enter.
     type: Tweak
-  - message: Added message tooltip to the erase verb.
+  - message: Добавлена ​​всплывающая подсказка к команде удаления.
     type: Tweak
   id: 5
   time: '2023-10-14T09:21:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Add pop sound effect when using the erase admin verb.
+  - message: Добавьте звуковой эффект щелчка при использовании команды удаления администратора.
     type: Tweak
   id: 5
   time: '2023-10-14T09:47:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Fixed not being able to sort the F7 players tab by playtime.
+  - message: Исправлена ​​ошибка, из-за которой вкладка «Игроки» при нажатии клавиши F7 не сортировалась по времени игры.
     type: Fix
   id: 6
   time: '2023-10-14T23:52:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Fixed playtime being sorted incorrectly in the F7 players tab.
+  - message: Исправлена ​​ошибка сортировки игрового времени на вкладке игроков, нажимаемых F7.
     type: Fix
   id: 7
   time: '2023-10-16T04:23:00.0000000+00:00'
 - author: DrSmugleaf
   changes:
-  - message: Fixed whitelist commands not giving feedback with 0 arguments.
+  - message: Исправлена ​​ошибка, из-за которой команды, использующие белый список, не выдавали обратную связь при отсутствии аргументов.
     type: Fix
-  - message: Fixed not trimming starting and trailing whitespaces within names in
-      whitelist commands.
+  - message: Исправлена ​​ошибка, из-за которой не удалялись начальные и конечные пробелы в именах в командах белого списка.
     type: Fix
-  - message: Added a \[player\] completion type hint to whitelist add and remove commands.
+  - message: Добавлена ​​подсказка типа автодополнения \[player\] для команд добавления и удаления, включенных в белый список.
     type: Tweak
   id: 8
   time: '2023-10-21T09:53:00.0000000+00:00'

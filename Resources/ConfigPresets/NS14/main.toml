@@ -23,8 +23,8 @@ website    = "Отсутствует"
 wiki       = "Отсутствует"
 
 [server]
-rules_file = "CorvaxLRPRuleset"
-lobby_name = "️🛰️ Nova Station 14 - Main"
+rules_file = "CorvaxRules"
+lobby_name = "️Nova Station 14 - Main"
 
 [movement]
 mob_pushing = false
