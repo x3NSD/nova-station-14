@@ -294,10 +294,13 @@ namespace Content.Client.Viewport
             var scaleFactor = (Vector2) PixelSize / _viewport!.Size;
 
             if (scaleFactor.X == 0 || scaleFactor.Y == 0)
-                // Basically a nonsense scenario, at least make sure to return something that can be inverted.
                 return Matrix3x2.Identity;
 
-            return Matrix3Helpers.CreateTransform(GlobalPixelPosition + drawBox.TopLeft, 0, scaleFactor);
+            return Matrix3Helpers.CreateTransform(
+                GlobalPixelPosition,
+                0,
+                scaleFactor
+            );
         }
 
         private void EnsureViewportCreated()
