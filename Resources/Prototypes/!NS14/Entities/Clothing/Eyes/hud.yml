@@ -1,0 +1,14 @@
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband, ShowMedicalIcons]
+  id: ClothingEyesHudAdvanced
+  name: ClothingEyesHudAdvanced
+  description: ClothingEyesHudAdvanced.desc
+  components:
+  - type: Sprite
+    sprite: "!NS14/Clothing/Eyes/Hud/advanced.rsi"
+  - type: Clothing
+    sprite: "!NS14/Clothing/Eyes/Hud/advanced.rsi"
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon
