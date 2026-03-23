@@ -8,6 +8,8 @@
     sprite: "!NS14/Clothing/Eyes/Hud/advanced.rsi"
   - type: Clothing
     sprite: "!NS14/Clothing/Eyes/Hud/advanced.rsi"
+  - type: FlashImmunity
+  - type: EyeProtection
   - type: Tag
     tags:
     - PetWearable

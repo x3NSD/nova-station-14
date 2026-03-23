@@ -57,7 +57,14 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            if (!_outfitSystem.SetOutfit(target.Value, args[1]))
+            // Check if user wants to exclude storage items
+            var includeStorage = true;
+            if (args.Length > 2)
+            {
+                includeStorage = !args[2].Equals("nostorage", StringComparison.OrdinalIgnoreCase);
+            }
+
+            if (!_outfitSystem.SetOutfit(target.Value, args[1], includeStorage: includeStorage))
                 shell.WriteLine(Loc.GetString("cmd-setoutfit-invalid-outfit-id-error"));
         }
     }

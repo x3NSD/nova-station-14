@@ -1,0 +1,58 @@
+- type: job
+  id: SpecialOperationOfficer
+  name: job-name-specialoperationofficer
+  description: job-description-specialoperationofficer
+  playTimeTracker: JobSpecialOperationOfficer
+  setPreference: false
+  startingGear: SpecialOperationOfficerGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-directorate
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - DeathSquad
+  - SpecialOperationOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: SpecialOperationOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    shoes: ClothingShoesCentcomBlack
+    head: ClothingHeadCapCentcomBlack
+    eyes: ClothingEyesHudAdvanced
+    mask: ClothingMaskGasSpecialOperationOfficer
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    id: SpecialOperationOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMilitaryWebbingMedFilled
+    pocket1: RubberStampSOO
+    pocket2: DoorRemoteAll
+    neck: ClothingNeckCloakCentcomBlack
+    back: ClothingBackpackSatchelHolding
+  storage:
+    back:
+    - WeaponRevolverMatebaAP
+    - SpeedLoaderMagnumAP
+    - ClothingShoesBootsMagAdv
+    - Hypospray
+    - ToolDebug
+    - ExtendedEmergencyOxygenTankFilled
+    - EnergySwordDouble
+    - RubberStampApproved
+    - RubberStampDenied
+    - RubberStampCentcom
+    - RubberStampSOD
+
+- type: chameleonOutfit
+  id: SpecialOperationOfficerOutfit
+  job: SpecialOperationOfficer
+  hasMindShield: true
+  equipment:
+    neck: ClothingNeckScarfStripedCentcom
+    mask: ClothingMaskGasCentcom

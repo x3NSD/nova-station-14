@@ -1,0 +1,25 @@
+- type: entity
+  name: Special Operations Department rubber stamp
+  parent: RubberStampBase
+  id: RubberStampSOD
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-SOD
+    stampedColor: "#255f00"
+    stampState: "paper_stamp-sod"
+  - type: Sprite
+    state: stamp-centcom
+
+- type: entity
+  name: Special Operation Officer rubber stamp
+  parent: RubberStampBase
+  id: RubberStampSOO
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-SOO
+    stampedColor: "#3c3c3c"
+    stampState: "paper_stamp-soo"
+  - type: Sprite
+    state: stamp-centcom

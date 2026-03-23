@@ -46,6 +46,7 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  - SpecialOperationOfficer
   editorHidden: true
   weight: 120
 
@@ -72,6 +73,7 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  - SpecialOperationOfficer
   primary: false
   weight: 100
 

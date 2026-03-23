@@ -103,6 +103,8 @@
   delayPerVolume: 0
   transferAmounts:
   - 5
+  - 10
+  - 15
 
 - type: injectorMode
   abstract: true

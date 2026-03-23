@@ -1,0 +1,19 @@
+- type: voteConfig
+  id: defaultVoteConfig
+  stationTypeVote:
+    enabled: true
+    delayAfterRoundEnd: 10
+    displayVotes: false
+    options:
+      - Спокойный
+      - РДМ
+  mapVote:
+    enabled: true
+    delayAfterStationType: 5
+    displayVotes: true
+    excludeRecent: 3
+  presetVote:
+    enabled: true
+    delayAfterMap: 5
+    displayVotes: true
+    excludeRecent: 2

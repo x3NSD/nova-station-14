@@ -45,6 +45,11 @@ namespace Content.Shared.Administration
         Spawn = 1 << 6,
 
         /// <summary>
+        ///     Ability to manage roles and role assignment commands.
+        /// </summary>
+        ManageRoles = 1 << 22,
+
+        /// <summary>
         ///     Ability to use VV.
         /// </summary>
         VarEdit = 1 << 7,

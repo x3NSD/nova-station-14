@@ -8,6 +8,7 @@
             "name": "Client",
             "type": "coreclr",
             "request": "launch",
+            "preLaunchTask": "Build - Development",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": [],
             "console": "internalConsole",
@@ -17,6 +18,7 @@
             "name": "Client (Compatibility renderer)",
             "type": "coreclr",
             "request": "launch",
+            "preLaunchTask": "Build - Development",
             "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
             "args": "--cvar display.compat=true",
             "console": "internalConsole",
@@ -26,6 +28,7 @@
             "name": "Server",
             "type": "coreclr",
             "request": "launch",
+            "preLaunchTask": "Build - Development",
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [],
             "console": "integratedTerminal",
@@ -49,7 +52,7 @@
                 "Server",
                 "Client"
             ],
-            "preLaunchTask": "build"
+            "preLaunchTask": "Build - Development"
         }
     ]
 }

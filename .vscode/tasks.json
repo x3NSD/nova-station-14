@@ -4,13 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build - Development",
             "command": "dotnet",
             "type": "shell",
             "args": [
                 "build",
-                "/property:GenerateFullPaths=true", // Ask dotnet build to generate full paths for file names.
-                "/consoleloggerparameters:'ForceNoAlign;NoSummary'" // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:'ForceNoAlign;NoSummary'"
             ],
             "group": {
                 "kind": "build",
@@ -76,6 +76,87 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-test",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "--configuration",
+                "DebugOpt",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:'ForceNoAlign;NoSummary'"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build - Release",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "--configuration",
+                "Release",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:'ForceNoAlign;NoSummary'"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Start - Server",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server/Content.Server.csproj",
+                "--no-build",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "presentation": {
+                "reveal": "always"
+            },
+            "isBackground": false,
+            "problemMatcher": []
+        },
+        {
+            "label": "Start - Client",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client/Content.Client.csproj",
+                "--no-build",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "presentation": {
+                "reveal": "always"
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Build - Clean",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Remove-Item -Path '${workspaceFolder}/bin' -Recurse -Force -ErrorAction SilentlyContinue; Write-Host 'Bin folder cleaned'"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            }
         }
     ]
 }
