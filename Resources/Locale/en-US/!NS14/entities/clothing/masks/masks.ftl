@@ -1,0 +1,2 @@
+ent-ClothingMaskGasSpecialOperationOfficer = special operation officer gas mask
+    .desc = .-.. - ---   -... -.-- .-.. .-   - .-- --- .--- .-   .--. --- ... .-.. . -.. -. .--- .- .-.-   --- ---- .. -... -.- .-

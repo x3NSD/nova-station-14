@@ -213,8 +213,8 @@
 - type: entity
   parent: BaseAction
   id: ActionToggleSuitPiece
-  name: Toggle Suit Piece
-  description: Remember to equip the important pieces of your suit before going into action.
+  name: ActionToggleSuitPiece
+  description: ActionToggleSuitPiece.desc
   components:
   - type: Action
     itemIconStyle: BigItem

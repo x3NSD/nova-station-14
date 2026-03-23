@@ -11,6 +11,9 @@ using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Station;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
+using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
@@ -23,8 +26,9 @@ public sealed class OutfitSystem : EntitySystem
     [Dependency] private readonly HandsSystem _handSystem = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedStationSpawningSystem _spawningSystem = default!;
+    [Dependency] private readonly SharedStorageSystem _storageSystem = default!;
 
-    public bool SetOutfit(EntityUid target, string gear, Action<EntityUid, EntityUid>? onEquipped = null, bool unremovable = false)
+    public bool SetOutfit(EntityUid target, string gear, Action<EntityUid, EntityUid>? onEquipped = null, bool unremovable = false, bool includeStorage = true)
     {
         if (!EntityManager.TryGetComponent(target, out InventoryComponent? inventoryComponent))
             return false;
@@ -105,6 +109,31 @@ public sealed class OutfitSystem : EntitySystem
 
             // Equip the target with the job loadout
             _spawningSystem.EquipRoleLoadout(target, roleLoadout, jobProto);
+        }
+
+        // Handle storage items
+        if (includeStorage && startingGear.Storage.Count > 0)
+        {
+            var coords = EntityManager.GetComponent<TransformComponent>(target).Coordinates;
+            
+            // For each slot with storage items (e.g., "back", "belt")
+            foreach (var (slotName, items) in startingGear.Storage)
+            {
+                // Try to get the item equipped in this slot
+                if (!_invSystem.TryGetSlotEntity(target, slotName, out var equippedItem))
+                    continue;
+
+                // Try to get the storage component of the equipped item
+                if (!EntityManager.TryGetComponent<StorageComponent>(equippedItem.Value, out var storageComp))
+                    continue;
+
+                // Spawn and insert each item into the storage
+                foreach (var itemProtoId in items)
+                {
+                    var spawnedItem = EntityManager.SpawnEntity(itemProtoId, coords);
+                    _storageSystem.Insert(equippedItem.Value, spawnedItem, out _, storageComp: storageComp, playSound: false);
+                }
+            }
         }
 
         return true;

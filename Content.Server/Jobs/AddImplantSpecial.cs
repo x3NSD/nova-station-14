@@ -1,7 +1,9 @@
 ﻿using Content.Shared.Implants;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
+using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Server.Jobs;
 
@@ -9,6 +11,7 @@ namespace Content.Server.Jobs;
 /// Adds implants on spawn to the entity
 /// </summary>
 [UsedImplicitly]
+[DataDefinition]
 public sealed partial class AddImplantSpecial : JobSpecial
 {
     [DataField]

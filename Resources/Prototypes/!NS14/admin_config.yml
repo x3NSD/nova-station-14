@@ -1,0 +1,9 @@
+- type: adminConfig
+  id: discordAdminConfig
+  discordRoleMapping:
+    Основатель: Host
+    Администратор: Admin, ManageRoles
+    Модератор: Moderator, Adminhelp
+    Помощник: Adminhelp
+  userIdMapping:
+    # "123456789012345678": Host

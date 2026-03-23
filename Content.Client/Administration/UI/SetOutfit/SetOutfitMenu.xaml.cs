@@ -41,7 +41,8 @@ namespace Content.Client.Administration.UI.SetOutfit
         {
             if (TargetEntityId == null || _selectedOutfit == null)
                 return;
-            var command = $"setoutfit {TargetEntityId} {_selectedOutfit.ID}";
+            var storageArg = IncludeStorageCheckBox.Pressed ? "" : " nostorage";
+            var command = $"setoutfit {TargetEntityId} {_selectedOutfit.ID}{storageArg}";
             _consoleHost.ExecuteCommand(command);
             Close();
         }

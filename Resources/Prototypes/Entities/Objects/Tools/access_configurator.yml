@@ -132,6 +132,7 @@
     - GenpopEnter
     - GenpopLeave
     - DeathSquad
+    - SpecialOperationOfficer
     privilegedIdSlot:
       name: id-card-console-privileged-id
       startingItem: UniversalIDCard

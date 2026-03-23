@@ -2,3 +2,8 @@
   id: DeathSquad
   name: id-card-access-level-death-squad
   canAddToIdCard: false
+
+- type: accessLevel
+  id: SpecialOperationOfficer
+  name: id-card-access-level-special-operation-officer
+  canAddToIdCard: false

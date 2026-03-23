@@ -9,6 +9,7 @@
             </BoxContainer>
             <ItemList Name="OutfitList" SelectMode="Single" VerticalExpand="True"
                                SizeFlagsStretchRatio="0.9" />
+            <CheckBox Name="IncludeStorageCheckBox" Text="Include storage items" Pressed="true" />
             <Button Name="ConfirmButton" HorizontalExpand="True" />
         </BoxContainer>
     </BoxContainer>

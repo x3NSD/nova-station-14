@@ -23,3 +23,4 @@ Main changes of this downstream:
 - Increased role timers
 - Custom roles
   * Internal affairs agent
+- Viewport stretch: when viewport.vertical_fit enabled, fill horizontal space (no side black bars) and crop vertical edges when needed (widescreen support).
